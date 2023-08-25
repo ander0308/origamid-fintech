@@ -70,7 +70,7 @@ ul {
   background-color: var(--color-4);
 }
 
-.bg-5{
+.bg-5 {
   background-color: var(--color-5);
 }
 
@@ -91,4 +91,23 @@ ul {
   font-size: 1.5rem;
   margin-bottom: var(--gap-default);
   color: var(--color-1);
+}
+
+/* venda */
+
+.venda {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: var(--gap-default);
+  margin-bottom: var(--gap-small);
+  align-items: center;
+}
+
+.venda div:last-child {
+  justify-self: flex-end;
+}
+
+.venda a {
+  text-decoration: none;
+  color: inherit;
 }
