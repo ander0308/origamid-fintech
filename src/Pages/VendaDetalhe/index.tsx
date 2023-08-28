@@ -1,14 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
-import React from "react";
 import { IVenda } from "../../Context/DataContext";
 import Loading from "../../Components/Loading";
 
 type IVendaSemData = Omit<IVenda, "data">;
-const Venda = () => {
-  const { id } = useParams();
+const VendaDetalhe = () => {
+  const location = useLocation();
+  const idVenda = location.state;
+
   const { data, loading } = useFetch<IVendaSemData>(
-    `https://data.origamid.dev/vendas/${id}`
+    `https://data.origamid.dev/vendas/${idVenda}`
   );
 
   if (loading === true) return <Loading />;
@@ -31,4 +32,4 @@ const Venda = () => {
   );
 };
 
-export default Venda;
+export default VendaDetalhe;

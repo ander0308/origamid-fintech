@@ -5,7 +5,8 @@ import { DataContextProvider } from "./Context/DataContext";
 import Resumo from "./Pages/Resumo";
 import Vendas from "./Pages/Vendas";
 import "./Styles.css";
-import Venda from "./Pages/Venda";
+import VendaDetalhe from "./Pages/VendaDetalhe";
+
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Resumo />} />
               <Route path="/vendas" element={<Vendas />} />
-              <Route path="/vendas/:id" element={<Venda />} />
+              <Route path="/venda-detalhe" element={<VendaDetalhe/>} />
             </Routes>
           </main>
         </div>

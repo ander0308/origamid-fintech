@@ -1,13 +1,19 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import { IVenda } from "../../Context/DataContext";
-import { NavLink, useParams } from "react-router-dom";
 
 const VendaItem = ({ venda }: { venda: IVenda }) => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    const idVenda = venda.id
+    navigate(`/venda-detalhe`, {state: idVenda})
+  }
+
   return (
     <div className="venda box">
-      <NavLink to={`/vendas/${venda.id}`} style={{ fontFamily: "monospace" }}>
+      <button style={{ fontFamily: "monospace" }} onClick={handleClick}>
         {venda.id}
-      </NavLink>
+      </button>
       <div>{venda.nome}</div>
       <div>
         {venda.preco.toLocaleString("pt-br", {
